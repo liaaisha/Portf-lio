@@ -1,0 +1,2194 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lia Aisha Pedroso Mesquita | Estudante de Ciência da Computação</title>
+  <meta name="description" content="Portfólio profissional de Lia Aisha Pedroso Mesquita — Estudante de Ciência da Computação na UFMT | Dados, IA, Jogos e UI/Design." />
+  <meta property="og:title" content="Lia Aisha Pedroso Mesquita | Portfólio" />
+  <meta property="og:description" content="Estudante de Ciência da Computação | Dados, IA, Jogos e UI/Design. Projetos em design participativo, jogos educativos, UI/UX e modelagem." />
+  <meta property="og:type" content="website" />
+
+  <script>
+    // Envie sua foto para o repositório do GitHub, na mesma pasta do index.html, e coloque aqui o nome exato do arquivo (exemplo: foto.jpg ou foto.png). Também funciona com um link de imagem.
+    const foto = "foto.jpg";
+  </script>
+
+  <!-- Google Fonts: Plus Jakarta Sans (editorial), JetBrains Mono (retro-tech) + Playfair Display Italic (caligráfica/editorial para o nome) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@1,400;1,500;1,600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet" />
+
+  <!-- Phosphor Icons (biblioteca única e consistente) -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <style>
+    /* Troque as cores do site aqui */
+    :root {
+      --cor-fundo: #F6F1E9;
+      --cor-superficie: #EFE7DB;
+      --cor-superficie-card: #FAF7F2;
+      --cor-texto: #282426;
+      --cor-texto-suave: #595054;
+      --cor-destaque: #852638;
+      --cor-destaque-hover: #691B2A;
+      --cor-rosa-antigo: #D9B8B3;
+      --cor-bege-suave: #D6C7AE;
+      --cor-borda: #CBBBA2;
+      --cor-fita: rgba(217, 184, 179, 0.72);
+      --sombra-papel: 4px 4px 0px #D6C7AE;
+      --sombra-janela: 5px 5px 0px #282426;
+      --raio: 10px;
+      --fonte-principal: 'Plus Jakarta Sans', sans-serif;
+      --fonte-mono: 'JetBrains Mono', monospace;
+      --fonte-nome: 'Playfair Display', Georgia, serif;
+    }
+
+    [data-theme="dark"] {
+      --cor-fundo: #1B1819;
+      --cor-superficie: #241F21;
+      --cor-superficie-card: #2B2527;
+      --cor-texto: #EDE7E2;
+      --cor-texto-suave: #C2B6B0;
+      --cor-destaque: #D97A8B;
+      --cor-destaque-hover: #E896A5;
+      --cor-rosa-antigo: #593A3F;
+      --cor-bege-suave: #3E3632;
+      --cor-borda: #4A403C;
+      --cor-fita: rgba(133, 38, 56, 0.55);
+      --sombra-papel: 4px 4px 0px #120F10;
+      --sombra-janela: 5px 5px 0px #0F0D0E;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--fonte-principal);
+      background-color: var(--cor-fundo);
+      color: var(--cor-texto);
+      line-height: 1.65;
+      overflow-x: hidden;
+      position: relative;
+      /* Textura discreta de papel quadriculado + granulação sutil */
+      background-image:
+        radial-gradient(var(--cor-bege-suave) 0.75px, transparent 0.75px),
+        linear-gradient(to right, rgba(133, 38, 56, 0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(133, 38, 56, 0.035) 1px, transparent 1px);
+      background-size: 24px 24px, 48px 48px, 48px 48px;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--cor-destaque);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ================= NAVBAR RETRÔ-EDITORIAL ================= */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: var(--cor-fundo);
+      border-bottom: 2px solid var(--cor-borda);
+    }
+
+    .navbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 72px;
+      gap: 16px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--fonte-mono);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--cor-destaque);
+      padding: 8px 12px;
+      border: 1.5px solid var(--cor-destaque);
+      border-radius: var(--raio);
+      background: var(--cor-superficie-card);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 8px 14px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: var(--raio);
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: var(--cor-superficie);
+      color: var(--cor-destaque);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .icon-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 44px;
+      min-height: 44px;
+      padding: 8px 12px;
+      border-radius: var(--raio);
+      border: 1.5px solid var(--cor-borda);
+      background-color: var(--cor-superficie-card);
+      color: var(--cor-texto);
+      font-family: var(--fonte-mono);
+      font-size: 0.85rem;
+      gap: 6px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .icon-btn:hover {
+      border-color: var(--cor-destaque);
+      color: var(--cor-destaque);
+      transform: translateY(-2px);
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    /* ================= DECORAÇÕES DE SCRAPBOOK & PIXEL ART ================= */
+    .washi-tape {
+      position: absolute;
+      width: 112px;
+      height: 26px;
+      background-color: var(--cor-fita);
+      border-left: 1px dashed rgba(40, 36, 38, 0.2);
+      border-right: 1px dashed rgba(40, 36, 38, 0.2);
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .retro-window {
+      background-color: var(--cor-superficie-card);
+      border: 2px solid var(--cor-texto);
+      border-radius: var(--raio);
+      box-shadow: var(--sombra-janela);
+      overflow: hidden;
+    }
+
+    .retro-window-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 14px;
+      background-color: var(--cor-destaque);
+      color: #F6F1E9;
+      font-family: var(--fonte-mono);
+      font-size: 0.8rem;
+      border-bottom: 2px solid var(--cor-texto);
+    }
+
+    [data-theme="dark"] .retro-window-bar {
+      background-color: #691B2A;
+      color: #F6F1E9;
+    }
+
+    .window-dots {
+      display: inline-flex;
+      gap: 6px;
+    }
+
+    .window-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
+      background-color: #F6F1E9;
+      display: inline-block;
+    }
+
+    /* ================= HERO SECTION ================= */
+    .hero {
+      min-height: calc(100vh - 74px);
+      display: flex;
+      align-items: center;
+      padding: 56px 0 64px;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.95fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    /* Saudação multilíngue grande no estilo da referência (com cursor piscante) */
+    .hero-greeting-line {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .greeting-display {
+      font-family: var(--fonte-principal);
+      font-size: clamp(3.2rem, 6.8vw, 5.1rem);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--cor-texto);
+      display: inline-flex;
+      align-items: center;
+      transition: opacity 0.22s ease, transform 0.22s ease;
+    }
+
+    .greeting-cursor {
+      display: inline-block;
+      width: 3px;
+      height: 0.92em;
+      background-color: var(--cor-texto);
+      margin-left: 4px;
+      animation: cursorBlink 1.05s steps(1) infinite;
+    }
+
+    @keyframes cursorBlink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+
+    .greeting-lang {
+      font-family: var(--fonte-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 5px;
+      background-color: var(--cor-superficie);
+      border: 1px solid var(--cor-borda);
+      color: var(--cor-destaque);
+      align-self: flex-start;
+      margin-top: 10px;
+    }
+
+    /* Linha "meu nome é Lia Aisha" conforme referência */
+    .hero-title {
+      font-family: var(--fonte-principal);
+      font-size: clamp(2rem, 4.2vw, 3.1rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--cor-texto);
+      margin-bottom: 16px;
+    }
+
+    .hero-name-script {
+      font-family: var(--fonte-nome);
+      font-style: italic;
+      font-weight: 500;
+      font-size: 1.12em;
+      letter-spacing: 0.01em;
+      color: var(--cor-destaque);
+    }
+
+    .hero-subtitle {
+      font-family: var(--fonte-mono);
+      font-size: clamp(0.95rem, 1.45vw, 1.1rem);
+      font-weight: 500;
+      color: var(--cor-destaque);
+      margin-bottom: 18px;
+    }
+
+    .hero-desc {
+      font-size: 1.0625rem;
+      color: var(--cor-texto-suave);
+      max-width: 62ch;
+      margin-bottom: 28px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 12px 24px;
+      background-color: var(--cor-destaque);
+      color: #F6F1E9;
+      font-weight: 700;
+      font-size: 0.98rem;
+      border: 2px solid var(--cor-destaque);
+      border-radius: var(--raio);
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    [data-theme="dark"] .btn-primary {
+      color: #1B1819;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--cor-destaque-hover);
+      border-color: var(--cor-destaque-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 12px 24px;
+      background-color: transparent;
+      color: var(--cor-destaque);
+      font-weight: 700;
+      font-size: 0.98rem;
+      border: 2px solid var(--cor-destaque);
+      border-radius: var(--raio);
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--cor-superficie);
+      transform: translateY(-2px);
+    }
+
+    .hero-socials {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .social-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 8px 14px;
+      background-color: var(--cor-superficie-card);
+      border: 1.5px solid var(--cor-borda);
+      border-radius: var(--raio);
+      font-family: var(--fonte-mono);
+      font-size: 0.85rem;
+      color: var(--cor-texto);
+      transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    .social-chip:hover {
+      border-color: var(--cor-destaque);
+      color: var(--cor-destaque);
+      transform: translateY(-2px);
+    }
+
+    /* Colagem Visual da Hero (Ilustração Personalizada + Foto + Adesivos Y2K) */
+    .hero-scrapbook {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 16px;
+    }
+
+    .illustration-card {
+      position: relative;
+      width: 100%;
+      max-width: 390px;
+      background-color: var(--cor-superficie-card);
+      border: 2px solid var(--cor-texto);
+      border-radius: var(--raio);
+      box-shadow: var(--sombra-janela);
+      padding: 16px;
+    }
+
+    .illustration-card .washi-tape.top-left {
+      top: -12px;
+      left: 24px;
+      transform: rotate(-8deg);
+    }
+
+    .illustration-card .washi-tape.bottom-right {
+      bottom: -12px;
+      right: 24px;
+      transform: rotate(-6deg);
+    }
+
+    .avatar-illustration-box {
+      width: 100%;
+      background-color: var(--cor-superficie);
+      border: 1.5px solid var(--cor-borda);
+      border-radius: calc(var(--raio) - 2px);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .avatar-y2k-bar {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 12px;
+      background-color: var(--cor-destaque);
+      color: #F6F1E9;
+      font-family: var(--fonte-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      border-bottom: 1.5px solid var(--cor-texto);
+    }
+
+    .avatar-y2k-dots {
+      display: inline-flex;
+      gap: 5px;
+    }
+
+    .avatar-y2k-dots span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .avatar-portrait-wrap {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      background-color: var(--cor-superficie-card);
+    }
+
+    .avatar-portrait-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+      display: block;
+    }
+
+    /* Moldura Polaroid da foto real (carregada via variável foto) */
+    .photo-polaroid {
+      position: absolute;
+      bottom: -24px;
+      left: -24px;
+      width: 138px;
+      background-color: var(--cor-superficie-card);
+      border: 2px solid var(--cor-destaque);
+      border-radius: var(--raio);
+      padding: 8px 8px 10px;
+      box-shadow: 4px 4px 0px var(--cor-texto);
+      transform: rotate(-5deg);
+      z-index: 4;
+    }
+
+    .photo-frame {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--cor-borda);
+      background-color: var(--cor-superficie);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-initials {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--fonte-mono);
+      font-weight: 700;
+      font-size: 1.65rem;
+      color: var(--cor-destaque);
+      background-color: var(--cor-superficie);
+    }
+
+    .photo-caption {
+      margin-top: 6px;
+      text-align: center;
+      font-family: var(--fonte-mono);
+      font-size: 0.68rem;
+      color: var(--cor-texto-suave);
+    }
+
+    /* Adesivos decorativos Y2K */
+    .sticker-badge {
+      position: absolute;
+      background-color: var(--cor-superficie-card);
+      border: 1.5px solid var(--cor-destaque);
+      border-radius: var(--raio);
+      padding: 6px 10px;
+      font-family: var(--fonte-mono);
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--cor-destaque);
+      box-shadow: 3px 3px 0px var(--cor-rosa-antigo);
+      z-index: 4;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .sticker-top-right {
+      top: -14px;
+      right: -12px;
+      transform: rotate(6deg);
+    }
+
+    .sticker-mid-right {
+      bottom: 34px;
+      right: -16px;
+      transform: rotate(-5deg);
+    }
+
+    /* ================= FAIXA FÓRMULA 1 INTERATIVA ================= */
+    .f1-track-strip {
+      width: 100%;
+      padding: 14px 0;
+      border-top: 2px dashed var(--cor-borda);
+      border-bottom: 2px dashed var(--cor-borda);
+      background-color: var(--cor-superficie);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .f1-track-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      position: relative;
+    }
+
+    .f1-label {
+      font-family: var(--fonte-mono);
+      font-size: 0.78rem;
+      color: var(--cor-texto-suave);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 2;
+      background-color: var(--cor-superficie);
+      padding-right: 12px;
+    }
+
+    .f1-car-runner {
+      position: absolute;
+      left: -120px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      animation: f1Pass 14s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes f1Pass {
+      0% { left: -140px; }
+      45% { left: 105%; }
+      100% { left: 105%; }
+    }
+
+    .checkered-flag {
+      display: inline-grid;
+      grid-template-columns: repeat(4, 5px);
+      grid-template-rows: repeat(2, 5px);
+      border: 1px solid var(--cor-texto);
+    }
+
+    .checkered-flag span:nth-child(odd) {
+      background-color: var(--cor-texto);
+    }
+
+    .checkered-flag span:nth-child(even) {
+      background-color: var(--cor-fundo);
+    }
+
+    /* ================= SEÇÕES GERAIS ================= */
+    section {
+      padding: 80px 0;
+      position: relative;
+    }
+
+    .section-header {
+      margin-bottom: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      border-bottom: 2px solid var(--cor-borda);
+      padding-bottom: 16px;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--fonte-mono);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--cor-destaque);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 3vw, 2.3rem);
+      font-weight: 800;
+      color: var(--cor-texto);
+      line-height: 1.2;
+    }
+
+    /* ================= SOBRE MIM (LAYOUT 2 COLUNAS EDITORIAL) ================= */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.85fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .about-paper {
+      position: relative;
+      background-color: var(--cor-superficie-card);
+      border: 1.5px solid var(--cor-borda);
+      border-radius: var(--raio);
+      padding: 32px;
+      box-shadow: var(--sombra-papel);
+    }
+
+    .about-paper .washi-tape {
+      top: -13px;
+      right: 32px;
+      transform: rotate(4deg);
+    }
+
+    .about-text {
+      font-size: 1.0625rem;
+      color: var(--cor-texto);
+      max-width: 68ch;
+      margin-bottom: 20px;
+    }
+
+    .about-meta-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      padding-top: 20px;
+      border-top: 1.5px dashed var(--cor-borda);
+      list-style: none;
+    }
+
+    .about-meta-item {
+      font-size: 0.92rem;
+      color: var(--cor-texto-suave);
+    }
+
+    .about-meta-item strong {
+      display: block;
+      font-family: var(--fonte-mono);
+      font-size: 0.78rem;
+      color: var(--cor-destaque);
+      margin-bottom: 2px;
+    }
+
+    .about-sketch-note {
+      background-color: var(--cor-superficie);
+      border: 1.5px solid var(--cor-borda);
+      border-radius: var(--raio);
+      padding: 24px;
+    }
+
+    .sketch-header {
+      font-family: var(--fonte-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--cor-destaque);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .interest-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .interest-chip {
+      padding: 6px 12px;
+      background-color: var(--cor-superficie-card);
+      border: 1.5px solid var(--cor-borda);
+      border-radius: var(--raio);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--cor-texto);
+    }
+
+    /* ================= PROJETOS (DESTAQUE PRINCIPAL) ================= */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    .project-card {
+      background-color: var(--cor-superficie-card);
+      border: 2px solid var(--cor-texto);
+      border-radius: var(--raio);
+      box-shadow: var(--sombra-papel);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 6px 6px 0px var(--cor-destaque);
+    }
+
+    .project-card.featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+    }
+
+    .project-visual {
+      background-color: var(--cor-superficie);
+      border-bottom: 2px solid var(--cor-texto);
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      min-height: 210px;
+    }
+
+    .project-card.featured .project-visual {
+      border-bottom: none;
+      border-right: 2px solid var(--cor-texto);
+      min-height: 100%;
+    }
+
+    .project-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      padding: 4px 10px;
+      background-color: var(--cor-destaque);
+      color: #F6F1E9;
+      font-family: var(--fonte-mono);
+      font-size: 0.74rem;
+      font-weight: 700;
+      border-radius: 6px;
+    }
+
+    [data-theme="dark"] .project-badge {
+      color: #1B1819;
+    }
+
+    .project-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .project-context {
+      font-family: var(--fonte-mono);
+      font-size: 0.8rem;
+      color: var(--cor-destaque);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .project-title {
+      font-size: 1.32rem;
+      font-weight: 800;
+      color: var(--cor-texto);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+
+    .project-desc {
+      font-size: 0.98rem;
+      color: var(--cor-texto-suave);
+      margin-bottom: 12px;
+    }
+
+    .project-result {
+      font-size: 0.9rem;
+      padding: 10px 14px;
+      background-color: var(--cor-superficie);
+      border-left: 3px solid var(--cor-destaque);
+      border-radius: 0 6px 6px 0;
+      color: var(--cor-texto);
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .tech-tag {
+      padding: 4px 10px;
+      font-family: var(--fonte-mono);
+      font-size: 0.76rem;
+      background-color: var(--cor-superficie);
+      border: 1px solid var(--cor-borda);
+      border-radius: 6px;
+      color: var(--cor-texto);
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .project-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 44px;
+      padding: 8px 16px;
+      border-radius: var(--raio);
+      font-size: 0.88rem;
+      font-weight: 700;
+      background-color: var(--cor-destaque);
+      color: #F6F1E9;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    [data-theme="dark"] .project-link-btn {
+      color: #1B1819;
+    }
+
+    .project-link-btn:hover {
+      background-color: var(--cor-destaque-hover);
+      transform: translateY(-2px);
+    }
+
+    .project-link-btn.outline {
+      background-color: transparent;
+      color: var(--cor-destaque);
+      border: 1.5px solid var(--cor-destaque);
+    }
+
+    .project-link-btn.outline:hover {
+      background-color: var(--cor-superficie);
+    }
+
+    /* ================= HABILIDADES (AGRUPADAS POR CATEGORIA, SEM BARRAS) ================= */
+    .skills-layout {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .skill-group {
+      background-color: var(--cor-superficie-card);
+      border: 1.5px solid var(--cor-borda);
+      border-radius: var(--raio);
+      padding: 24px;
+      box-shadow: var(--sombra-papel);
+    }
+
+    .skill-group-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.12rem;
+      font-weight: 800;
+      color: var(--cor-texto);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1.5px dashed var(--cor-borda);
+    }
+
+    .skill-group-header i {
+      color: var(--cor-destaque);
+      font-size: 1.35rem;
+    }
+
+    .skill-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .skill-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 8px 12px;
+      background-color: var(--cor-superficie);
+      border-radius: 8px;
+      font-size: 0.95rem;
+    }
+
+    .skill-name {
+      font-weight: 600;
+      color: var(--cor-texto);
+    }
+
+    .skill-level {
+      font-family: var(--fonte-mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 6px;
+      border: 1px solid var(--cor-destaque);
+      color: var(--cor-destaque);
+      background-color: var(--cor-superficie-card);
+      white-space: nowrap;
+    }
+
+    .soft-skill-item {
+      padding: 12px 14px;
+      background-color: var(--cor-superficie);
+      border-left: 3px solid var(--cor-destaque);
+      border-radius: 0 8px 8px 0;
+    }
+
+    .soft-skill-item strong {
+      display: block;
+      font-size: 0.96rem;
+      color: var(--cor-texto);
+      margin-bottom: 4px;
+    }
+
+    .soft-skill-item span {
+      font-size: 0.9rem;
+      color: var(--cor-texto-suave);
+    }
+
+    /* ================= EXPERIÊNCIAS (LINHA DO TEMPO) ================= */
+    .timeline {
+      position: relative;
+      padding-left: 28px;
+      border-left: 2px dashed var(--cor-destaque);
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .timeline-item {
+      position: relative;
+      background-color: var(--cor-superficie-card);
+      border: 1.5px solid var(--cor-borda);
+      border-radius: var(--raio);
+      padding: 22px 24px;
+      box-shadow: var(--sombra-papel);
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -37px;
+      top: 24px;
+      width: 14px;
+      height: 14px;
+      background-color: var(--cor-destaque);
+      border: 3px solid var(--cor-fundo);
+      border-radius: 3px;
+      transform: rotate(45deg);
+    }
+
+    .timeline-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .timeline-role {
+      font-size: 1.12rem;
+      font-weight: 800;
+      color: var(--cor-texto);
+    }
+
+    .timeline-date {
+      font-family: var(--fonte-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 6px;
+      background-color: var(--cor-superficie);
+      color: var(--cor-destaque);
+      border: 1px solid var(--cor-borda);
+    }
+
+    .timeline-desc {
+      font-size: 0.96rem;
+      color: var(--cor-texto-suave);
+      max-width: 72ch;
+    }
+
+    /* ================= FORMAÇÃO, CURSOS, PRÊMIOS E IDIOMAS ================= */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+    }
+
+    .edu-card {
+      background-color: var(--cor-superficie-card);
+      border: 1.5px solid var(--cor-borda);
+      border-radius: var(--raio);
+      padding: 26px;
+      box-shadow: var(--sombra-papel);
+      margin-bottom: 24px;
+    }
+
+    .edu-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .edu-card h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--cor-texto);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .edu-card h3 i {
+      color: var(--cor-destaque);
+    }
+
+    .edu-main-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--cor-destaque);
+      margin-bottom: 4px;
+    }
+
+    .edu-sub {
+      font-size: 0.96rem;
+      color: var(--cor-texto);
+      margin-bottom: 8px;
+    }
+
+    .edu-date {
+      display: inline-block;
+      font-family: var(--fonte-mono);
+      font-size: 0.82rem;
+      padding: 4px 10px;
+      background-color: var(--cor-superficie);
+      border-radius: 6px;
+      color: var(--cor-texto-suave);
+    }
+
+    .clean-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .clean-list li {
+      padding: 10px 14px;
+      background-color: var(--cor-superficie);
+      border-radius: 8px;
+      font-size: 0.94rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .clean-list li i {
+      color: var(--cor-destaque);
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    .lang-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .lang-item {
+      padding: 12px;
+      background-color: var(--cor-superficie);
+      border: 1px solid var(--cor-borda);
+      border-radius: 8px;
+    }
+
+    .lang-item strong {
+      display: block;
+      font-size: 0.96rem;
+      color: var(--cor-texto);
+    }
+
+    .lang-item span {
+      font-family: var(--fonte-mono);
+      font-size: 0.8rem;
+      color: var(--cor-destaque);
+    }
+
+    /* ================= CONTATO ================= */
+    .contact-box {
+      background-color: var(--cor-superficie-card);
+      border: 2px solid var(--cor-texto);
+      border-radius: var(--raio);
+      box-shadow: var(--sombra-janela);
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .contact-box h3 {
+      font-size: 1.55rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .contact-box p {
+      color: var(--cor-texto-suave);
+      margin-bottom: 20px;
+      max-width: 54ch;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .contact-card-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 52px;
+      padding: 12px 16px;
+      background-color: var(--cor-superficie);
+      border: 1.5px solid var(--cor-borda);
+      border-radius: var(--raio);
+      font-weight: 600;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .contact-card-link:hover {
+      border-color: var(--cor-destaque);
+      color: var(--cor-destaque);
+      transform: translateX(4px);
+    }
+
+    .contact-card-link span {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* ================= RODAPÉ ================= */
+    footer {
+      border-top: 2px solid var(--cor-borda);
+      padding: 28px 0;
+      background-color: var(--cor-superficie);
+      font-size: 0.9rem;
+      color: var(--cor-texto-suave);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    /* ================= ANIMAÇÃO DE ENTRADA AO ROLAR ================= */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ================= RESPONSIVIDADE ================= */
+    @media (max-width: 920px) {
+      .hero-grid,
+      .about-grid,
+      .edu-grid,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card.featured {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card.featured .project-visual {
+        border-right: none;
+        border-bottom: 2px solid var(--cor-texto);
+      }
+
+      .projects-grid,
+      .skills-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-scrapbook {
+        margin-top: 16px;
+      }
+
+      .photo-polaroid {
+        left: 0;
+        bottom: -20px;
+        width: 118px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        background-color: var(--cor-fundo);
+        border-bottom: 2px solid var(--cor-borda);
+        padding: 16px 24px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .about-meta-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+      .f1-car-runner {
+        animation: none;
+        position: static;
+        transform: none;
+      }
+      .greeting-cursor {
+        animation: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= MENU FIXO NO TOPO ================= -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="#inicio" class="brand" aria-label="Início — Lia Aisha Pedroso Mesquita">
+        <!-- Estrela Y2K / pixel art customizada -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 1.5L14.3 9.7L22.5 12L14.3 14.3L12 22.5L9.7 14.3L1.5 12L9.7 9.7L12 1.5Z" fill="currentColor" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+          <rect x="18" y="3" width="2.5" height="2.5" fill="currentColor"/>
+          <rect x="3.5" y="18.5" width="2.5" height="2.5" fill="currentColor"/>
+        </svg>
+        <span>lia.aisha</span>
+      </a>
+
+      <nav aria-label="Navegação principal">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#experiencia">Experiência</a></li>
+          <li><a href="#formacao">Formação</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button type="button" class="icon-btn" id="themeToggle" aria-label="Alternar tema claro e escuro">
+          <i class="ph ph-moon" id="themeIcon" aria-hidden="true"></i>
+          <span id="themeText">Escuro</span>
+        </button>
+
+        <button type="button" class="icon-btn menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menu de navegação">
+          <i class="ph ph-list" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= SEÇÃO INICIAL (HERO) ================= -->
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <!-- Saudação grande em múltiplos idiomas no formato da referência -->
+          <div class="hero-greeting-line" aria-live="polite">
+            <span class="greeting-display">
+              <span id="greetingWord">olá,</span><span class="greeting-cursor" aria-hidden="true"></span>
+            </span>
+            <span class="greeting-lang" id="greetingLang">PT</span>
+          </div>
+
+          <h1 class="hero-title">meu nome é <span class="hero-name-script">Lia Aisha</span></h1>
+          <p class="hero-subtitle">Estudante de Ciência da Computação | Dados, IA, Jogos e UI/Design</p>
+
+          <p class="hero-desc">
+            Graduanda na UFMT (4º semestre), buscando oportunidade de estágio nas áreas de Dados, Inteligência Artificial, Desenvolvimento de Software, Jogos, Simulação e Modelagem Computacional e Machine Learning.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#projetos" class="btn-primary">
+              <i class="ph ph-folder-open" aria-hidden="true"></i>
+              Ver projetos
+            </a>
+            <a href="#contato" class="btn-secondary">
+              <i class="ph ph-envelope-simple" aria-hidden="true"></i>
+              Entrar em contato
+            </a>
+          </div>
+
+          <!-- Apenas redes informadas na ficha -->
+          <div class="hero-socials" aria-label="Redes e contato">
+            <a href="https://www.linkedin.com/in/lia-aisha" target="_blank" rel="noopener noreferrer" class="social-chip">
+              <i class="ph ph-linkedin-logo" aria-hidden="true"></i>
+              LinkedIn
+            </a>
+            <a href="https://github.com/liaaisha" target="_blank" rel="noopener noreferrer" class="social-chip">
+              <i class="ph ph-github-logo" aria-hidden="true"></i>
+              GitHub
+            </a>
+            <a href="mailto:lia.aisha.pedroso@gmail.com" class="social-chip">
+              <i class="ph ph-at" aria-hidden="true"></i>
+              E-mail
+            </a>
+          </div>
+        </div>
+
+        <!-- Scrapbook: Ilustração personalizada + Polaroid com foto + Adesivos Y2K -->
+        <div class="hero-scrapbook">
+          <div class="illustration-card">
+            <div class="washi-tape top-left" aria-hidden="true"></div>
+            <div class="washi-tape bottom-right" aria-hidden="true"></div>
+
+            <!-- Adesivo Pixel Art / Game -->
+            <div class="sticker-badge sticker-top-right" aria-hidden="true">
+              <i class="ph ph-game-controller"></i>
+              <span>4º SEM // UFMT</span>
+            </div>
+
+            <!-- Adesivo Arte & Código -->
+            <div class="sticker-badge sticker-mid-right" aria-hidden="true">
+              <i class="ph ph-paint-brush"></i>
+              <span>UI + ARTE 2D/3D</span>
+            </div>
+
+            <!-- Avatar pixel art anexado (portrait.png) em janela retrô Y2K -->
+            <div class="avatar-illustration-box">
+              <div class="avatar-y2k-bar" aria-hidden="true">
+                <div class="avatar-y2k-dots">
+                  <span style="background:#F6F1E9;"></span>
+                  <span style="background:#D9B8B3;"></span>
+                  <span style="background:#D6C7AE;"></span>
+                </div>
+                <span>PORTRAIT.PNG</span>
+              </div>
+              <div class="avatar-portrait-wrap">
+                <img
+                  src="portrait.png"
+                  alt="Avatar em pixel art de Lia Aisha Pedroso Mesquita"
+                  class="avatar-portrait-img"
+                  onerror="this.onerror=null; this.src='https://placehold.co/320x320/F6F1E9/852638?text=portrait.png';"
+                />
+              </div>
+            </div>
+
+            <!-- Foto quadrada sobreposta estilo Polaroid (carregada via variável foto) -->
+            <div class="photo-polaroid">
+              <div class="photo-frame" id="photoFrame">
+                <!-- Preenchido via JS usando exclusivamente const foto -->
+              </div>
+              <div class="photo-caption">lia_aisha.jpg</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DETALHE INTERATIVO FÓRMULA 1 ================= -->
+    <div class="f1-track-strip" aria-hidden="true">
+      <div class="container f1-track-inner">
+        <span class="f1-label">
+          <span class="checkered-flag">
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+          </span>
+          <span>FIA GIRLS ON TRACK 2026 // SECTOR 01</span>
+        </span>
+
+        <!-- Mini carro de Fórmula 1 em SVG passando pela pista -->
+        <div class="f1-car-runner">
+          <svg width="88" height="28" viewBox="0 0 88 28" fill="none">
+            <!-- Linhas de velocidade -->
+            <line x1="0" y1="10" x2="18" y2="10" stroke="#852638" stroke-width="2" stroke-linecap="round"/>
+            <line x1="4" y1="16" x2="22" y2="16" stroke="#D9B8B3" stroke-width="2" stroke-linecap="round"/>
+            <!-- Asa traseira -->
+            <rect x="22" y="6" width="6" height="12" rx="1.5" fill="#282426"/>
+            <!-- Chassi -->
+            <path d="M27 14 L46 9 L66 13 L82 16 L82 19 L27 19 Z" fill="#852638" stroke="#282426" stroke-width="1.5"/>
+            <!-- Cockpit / Halo -->
+            <path d="M47 10 Q54 6 60 11" stroke="#282426" stroke-width="2" fill="none"/>
+            <!-- Asa dianteira -->
+            <rect x="78" y="15" width="8" height="4" rx="1" fill="#282426"/>
+            <!-- Rodas -->
+            <circle cx="34" cy="20" r="5.5" fill="#282426"/>
+            <circle cx="34" cy="20" r="2" fill="#D6C7AE"/>
+            <circle cx="70" cy="20" r="5" fill="#282426"/>
+            <circle cx="70" cy="20" r="1.8" fill="#D6C7AE"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= SOBRE MIM ================= -->
+    <section id="sobre" class="reveal">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-tag"><i class="ph ph-user-circle" aria-hidden="true"></i> 01 // Perfil</span>
+            <h2 class="section-title">Sobre</h2>
+          </div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-paper">
+            <div class="washi-tape" aria-hidden="true"></div>
+            <p class="about-text">
+              Entrei em Ciência da Computação na UFMT pela curiosidade com a tecnologia desde cedo, mas foi ao descobrir o tamanho da área que quis explorar frentes além do plano inicial. Hoje direciono meus estudos para Dados, Inteligência Artificial, Jogos, UI/UX Design e Design Gráfico, gostando de tirar ideias do papel, dar vida visual às minhas próprias criações na tela e pensar em como cada detalhe afeta o usuário. Curiosa, analítica e dedicada, busco um estágio onde eu possa aplicar essa base visual e expandir minha atuação técnica.
+            </p>
+
+            <ul class="about-meta-list">
+              <li class="about-meta-item">
+                <strong>GRADUAÇÃO</strong>
+                Ciência da Computação — UFMT (4º Semestre)
+              </li>
+              <li class="about-meta-item">
+                <strong>PREVISÃO DE FORMATURA</strong>
+                Julho de 2029 (07/2029)
+              </li>
+              <li class="about-meta-item">
+                <strong>LOCALIZAÇÃO</strong>
+                Cuiabá, Mato Grosso
+              </li>
+              <li class="about-meta-item">
+                <strong>OBJETIVO</strong>
+                Estágio em Tecnologia
+              </li>
+            </ul>
+          </div>
+
+          <aside class="about-sketch-note" aria-label="Áreas de interesse">
+            <div class="sketch-header">
+              <i class="ph ph-compass" aria-hidden="true"></i>
+              <span>ÁREAS DE INTERESSE</span>
+            </div>
+            <div class="interest-chips">
+              <span class="interest-chip">Dados</span>
+              <span class="interest-chip">Inteligência Artificial</span>
+              <span class="interest-chip">Machine Learning</span>
+              <span class="interest-chip">Desenvolvimento de Software</span>
+              <span class="interest-chip">Jogos</span>
+              <span class="interest-chip">Simulação e Modelagem Computacional</span>
+              <span class="interest-chip">UI/UX Design</span>
+              <span class="interest-chip">Design Gráfico</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROJETOS ================= -->
+    <section id="projetos" class="reveal">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-tag"><i class="ph ph-folders" aria-hidden="true"></i> 02 // Portfólio</span>
+            <h2 class="section-title">Projetos</h2>
+          </div>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Projeto 1 (Destaque): Casa dos Bichos -->
+          <article class="project-card featured">
+            <div class="project-visual">
+              <span class="project-badge">INICIAÇÃO CIENTÍFICA • SBGAMES 2026</span>
+              <!-- Ilustração editorial representando adaptação de desenho infantil para jogo bilíngue -->
+              <svg width="240" height="170" viewBox="0 0 240 170" role="img" aria-label="Representação visual de interface bilíngue e adaptação de personagens infantis do jogo Casa dos Bichos">
+                <rect x="12" y="14" width="216" height="142" rx="10" fill="#FAF7F2" stroke="#282426" stroke-width="2"/>
+                <rect x="12" y="14" width="216" height="24" rx="8" fill="#852638"/>
+                <text x="24" y="30" fill="#F6F1E9" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">CASA_DOS_BICHOS // UI + ASSETS</text>
+                <!-- Cartão de personagem adaptado -->
+                <rect x="26" y="50" width="84" height="90" rx="8" fill="#EFE7DB" stroke="#282426" stroke-width="1.5"/>
+                <circle cx="68" cy="84" r="20" fill="#D9B8B3" stroke="#282426" stroke-width="1.5"/>
+                <circle cx="61" cy="81" r="2.5" fill="#282426"/>
+                <circle cx="75" cy="81" r="2.5" fill="#282426"/>
+                <path d="M62 91 Q68 96 74 91" stroke="#282426" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+                <text x="68" y="124" text-anchor="middle" fill="#282426" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="700">PERSONAGEM</text>
+                <!-- Moldura Libras + UI -->
+                <rect x="122" y="50" width="92" height="54" rx="8" fill="#EFE7DB" stroke="#852638" stroke-width="2"/>
+                <text x="168" y="75" text-anchor="middle" fill="#852638" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700">MOLDURA</text>
+                <text x="168" y="88" text-anchor="middle" fill="#282426" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700">LIBRAS // PT</text>
+                <rect x="122" y="112" width="92" height="28" rx="6" fill="#852638"/>
+                <text x="168" y="130" text-anchor="middle" fill="#F6F1E9" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700">UI ACESSÍVEL</text>
+              </svg>
+            </div>
+
+            <div class="project-body">
+              <div>
+                <p class="project-context">Pesquisa de Iniciação Científica Voluntária (VIC) — UFMT</p>
+                <h3 class="project-title">Casa dos Bichos: uma aventura bilíngue</h3>
+                <p class="project-desc">
+                  Para superar a falta de representatividade e participação de crianças surdas na criação de jogos educativos bilíngues (Libras e português), apliquei princípios de Design Participativo e Design Centrado no Usuário para adaptar digitalmente desenhos infantis no Krita e no Figma, preservando propositalmente assimetrias e traços originais na criação dos animais do zoológico e do protagonista customizável. Também desenvolvi NPCs, personagens das cutscenes, ícone do jogo e componentes de UI acessíveis — incluindo moldura para vídeos em Libras, pop-ups de feedback, diário, prancheta e botões validados com testes de contraste e simuladores de daltonismo.
+                </p>
+                <div class="project-result">
+                  <strong>Resultado:</strong> Publicação do artigo <em>"Design Participativo com Crianças Surdas: Adaptação Digital de suas Ideias e Produções Visuais para um Jogo Educativo"</em> na trilha Artes &amp; Design do SBGames 2026.
+                </div>
+              </div>
+
+              <div>
+                <div class="project-tags">
+                  <span class="tech-tag">Figma</span>
+                  <span class="tech-tag">Krita</span>
+                  <span class="tech-tag">Miro</span>
+                  <span class="tech-tag">Notion</span>
+                  <span class="tech-tag">Scrum</span>
+                  <span class="tech-tag">Product Backlog</span>
+                  <span class="tech-tag">GDD</span>
+                </div>
+
+                <div class="project-links">
+                  <a href="https://www.instagram.com/casadosbichosufmt/" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                    <i class="ph ph-instagram-logo" aria-hidden="true"></i>
+                    @casadosbichosufmt
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projeto 4: Modelagem 3D -->
+          <article class="project-card">
+            <div class="project-visual">
+              <span class="project-badge">MODELAGEM 3D</span>
+              <svg width="210" height="145" viewBox="0 0 210 145" role="img" aria-label="Representação geométrica de objeto cilíndrico 3D com iluminação de estúdio">
+                <ellipse cx="105" cy="34" rx="34" ry="10" fill="#D6C7AE" stroke="#282426" stroke-width="2"/>
+                <path d="M71 34 L71 110 C71 116, 139 116, 139 110 L139 34" fill="#852638" stroke="#282426" stroke-width="2"/>
+                <ellipse cx="105" cy="34" rx="26" ry="6" fill="#FAF7F2" stroke="#282426" stroke-width="1.5"/>
+                <circle cx="92" cy="64" r="2.2" fill="#F6F1E9"/>
+                <circle cx="118" cy="78" r="2.5" fill="#F6F1E9"/>
+                <circle cx="98" cy="92" r="1.8" fill="#F6F1E9"/>
+              </svg>
+            </div>
+
+            <div class="project-body">
+              <div>
+                <p class="project-context">Projeto pessoal — Curso introdutório de modelagem 3D</p>
+                <h3 class="project-title">Estudo de Modelagem 3D e Renderização Comercial</h3>
+                <p class="project-desc">
+                  Exercício prático focado em modelagem de produto e realismo visual. Modelei uma lata de refrigerante detalhada, configurando materiais metálicos, gotas externas de condensação, iluminação e cenário de fundo voltado para fotografia comercial.
+                </p>
+              </div>
+
+              <div>
+                <div class="project-tags">
+                  <span class="tech-tag">Blender</span>
+                </div>
+
+                <div class="project-links">
+                  <a href="https://drive.google.com/drive/folders/1tysWjiURqrI_b7c_M-S_ccjWUDhxPqa9?usp=drive_link" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                    <i class="ph ph-arrow-square-out" aria-hidden="true"></i>
+                    Demonstração (Drive)
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projeto 5: Animação 2D -->
+          <article class="project-card">
+            <div class="project-visual">
+              <span class="project-badge">ANIMAÇÃO 2D FRAME A FRAME</span>
+              <svg width="210" height="145" viewBox="0 0 210 145" role="img" aria-label="Representação de quadros de animação 2D e fogos de artifício">
+                <rect x="18" y="24" width="174" height="96" rx="8" fill="#282426"/>
+                <circle cx="138" cy="54" r="18" fill="none" stroke="#D9B8B3" stroke-width="2" stroke-dasharray="4 4"/>
+                <circle cx="138" cy="54" r="8" fill="none" stroke="#852638" stroke-width="2"/>
+                <path d="M36 106 Q72 86 108 106" stroke="#D6C7AE" stroke-width="2" fill="none"/>
+                <text x="30" y="42" fill="#F6F1E9" font-family="JetBrains Mono, monospace" font-size="8.5">FRAME_024 // 12FPS</text>
+              </svg>
+            </div>
+
+            <div class="project-body">
+              <div>
+                <p class="project-context">Projeto pessoal de estudo em animação digital</p>
+                <h3 class="project-title">Curta-metragem de Animação 2D Frame a Frame</h3>
+                <p class="project-desc">
+                  Curta animado desenvolvido quadro a quadro para treinar fluidez de movimento e narrativa visual, retratando uma senhora solitária que revive memórias da infância ao observar fogos de artifício na virada de Ano Novo.
+                </p>
+              </div>
+
+              <div>
+                <div class="project-tags">
+                  <span class="tech-tag">Ibis Paint X</span>
+                </div>
+
+                <div class="project-links">
+                  <a href="https://drive.google.com/drive/folders/1tysWjiURqrI_b7c_M-S_ccjWUDhxPqa9?usp=drive_link" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                    <i class="ph ph-arrow-square-out" aria-hidden="true"></i>
+                    Demonstração (Drive)
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HABILIDADES ================= -->
+    <section id="habilidades" class="reveal">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-tag"><i class="ph ph-wrench" aria-hidden="true"></i> 03 // Competências</span>
+            <h2 class="section-title">Habilidades</h2>
+          </div>
+        </div>
+
+        <div class="skills-layout">
+          <!-- Linguagens -->
+          <div class="skill-group">
+            <h3 class="skill-group-header">
+              <i class="ph ph-code" aria-hidden="true"></i>
+              Linguagens de Programação
+            </h3>
+            <ul class="skill-list">
+              <li class="skill-row">
+                <span class="skill-name">Python</span>
+                <span class="skill-level">Intermediário</span>
+              </li>
+              <li class="skill-row">
+                <span class="skill-name">C</span>
+                <span class="skill-level">Básico</span>
+              </li>
+              <li class="skill-row">
+                <span class="skill-name">Swift</span>
+                <span class="skill-level">Básico</span>
+              </li>
+              <li class="skill-row">
+                <span class="skill-name">JavaScript</span>
+                <span class="skill-level">Básico</span>
+              </li>
+              <li class="skill-row">
+                <span class="skill-name">HTML</span>
+                <span class="skill-level">Básico</span>
+              </li>
+              <li class="skill-row">
+                <span class="skill-name">CSS</span>
+                <span class="skill-level">Básico</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Ferramentas e Tecnologia -->
+          <div class="skill-group">
+            <h3 class="skill-group-header">
+              <i class="ph ph-terminal-window" aria-hidden="true"></i>
+              Ferramentas de Desenvolvimento &amp; Dados
+            </h3>
+            <ul class="skill-list">
+              <li class="skill-row">
+                <span class="skill-name">Git</span>
+                <span class="skill-level">Intermediário</span>
+              </li>
+              <li class="skill-row">
+                <span class="skill-name">GitHub</span>
+                <span class="skill-level">Intermediário</span>
+              </li>
+              <li class="skill-row">
+                <span class="skill-name">Visual Studio Code</span>
+                <span class="skill-level">Intermediário</span>
+              </li>
+              <li class="skill-row">
+                <span class="skill-name">Excel</span>
+                <span class="skill-level">Básico</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Design, Interface e Arte Digital -->
+          <div class="skill-group">
+            <h3 class="skill-group-header">
+              <i class="ph ph-pen-nib" aria-hidden="true"></i>
+              Design, Interface &amp; Arte Digital
+            </h3>
+            <ul class="skill-list">
+              <li class="skill-row">
+                <span class="skill-name">Ilustração Digital</span>
+                <span class="skill-level">Avançado</span>
+              </li>
+              <li class="skill-row">
+                <span class="skill-name">UI/UX Design</span>
+                <span class="skill-level">Avançado</span>
+              </li>
+              <li class="skill-row">
+                <span class="skill-name">Design Gráfico</span>
+                <span class="skill-level">Avançado</span>
+              </li>
+              <li class="skill-row">
+                <span class="skill-name">Figma &amp; Canva</span>
+                <span class="skill-level">Avançado</span>
+              </li>
+              <li class="skill-row">
+                <span class="skill-name">Krita &amp; Ibis Paint X</span>
+                <span class="skill-level">Avançado</span>
+              </li>
+              <li class="skill-row">
+                <span class="skill-name">Animação 2D</span>
+                <span class="skill-level">Avançado</span>
+              </li>
+              <li class="skill-row">
+                <span class="skill-name">Modelagem 3D (Blender)</span>
+                <span class="skill-level">Avançado</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Habilidades Comportamentais -->
+          <div class="skill-group">
+            <h3 class="skill-group-header">
+              <i class="ph ph-users-three" aria-hidden="true"></i>
+              Comportamentais
+            </h3>
+            <ul class="skill-list">
+              <li class="soft-skill-item">
+                <strong>Trabalho em equipe e colaboração multidisciplinar</strong>
+                <span>Experiência em equipes ágeis (Scrum) integrando design, pedagogia e desenvolvimento de jogos.</span>
+              </li>
+              <li class="soft-skill-item">
+                <strong>Empatia e foco no usuário</strong>
+                <span>Aplicação de Design Centrado no Usuário e Design Participativo para criar soluções inclusivas e acessíveis.</span>
+              </li>
+              <li class="soft-skill-item">
+                <strong>Comunicação visual e proatividade</strong>
+                <span>Liderança na comunicação digital da Atlética Trojan e colaboração na divulgação do evento Nexus IC.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EXPERIÊNCIAS E ATIVIDADES (LINHA DO TEMPO) ================= -->
+    <section id="experiencia" class="reveal">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-tag"><i class="ph ph-clock-counter-clockwise" aria-hidden="true"></i> 04 // Trajetória</span>
+            <h2 class="section-title">Experiência e Atividades</h2>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-top">
+              <h3 class="timeline-role">Pesquisadora Voluntária — Iniciação Científica (VIC) | UFMT</h3>
+              <span class="timeline-date">jan/2025 – atual</span>
+            </div>
+            <p class="timeline-desc">
+              Desenvolvimento de elementos visuais, personagens, objetos interativos e interfaces acessíveis (UI) para o jogo educativo bilíngue <em>Casa dos Bichos</em>, seguindo diretrizes do GDD e organização ágil com Scrum.
+            </p>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-top">
+              <h3 class="timeline-role">Participante Selecionada — FIA Girls on Track 2026</h3>
+              <span class="timeline-date">2026</span>
+            </div>
+            <p class="timeline-desc">
+              Selecionada para o programa internacional de imersão e mentoria voltado à inserção feminina nas áreas de engenharia, tecnologia e automobilismo. Vivência nos bastidores da Fórmula 1 com acesso direto a profissionais de alta performance, incluindo engenheiras da equipe Mercedes F1 (com destaque para Kimberly Stevens), a repórter Mariana Becker, o piloto de safety car Bernd Mayländer e Kimi Antonelli, campeão mundial de Fórmula 1 de 2026.
+            </p>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-top">
+              <h3 class="timeline-role">Diretora de Marketing — Atlética Trojan (UFMT)</h3>
+              <span class="timeline-date">set/2026 – atual</span>
+            </div>
+            <p class="timeline-desc">
+              Criação de carrosséis e stories para divulgação de eventos esportivos, programas estudantis e conteúdos sobre computação no Instagram (responsável pelas publicações a partir de setembro de 2026).
+            </p>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-top">
+              <h3 class="timeline-role">Marketing e Participante — Evento Nexus IC (UFMT)</h3>
+              <span class="timeline-date">nov/2025</span>
+            </div>
+            <p class="timeline-desc">
+              Atuação na criação de materiais visuais de divulgação do evento de computação e participação na equipe vencedora (1º lugar) do Hackathon Web3.
+            </p>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-top">
+              <h3 class="timeline-role">Game Tester — Good Gamer Group</h3>
+              <span class="timeline-date">Experiência anterior</span>
+            </div>
+            <p class="timeline-desc">
+              Atuação na testagem de jogos, avaliando jogabilidade, experiência do usuário e identificação de falhas.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FORMAÇÃO, CURSOS, PUBLICAÇÕES E IDIOMAS ================= -->
+    <section id="formacao" class="reveal">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-tag"><i class="ph ph-graduation-cap" aria-hidden="true"></i> 05 // Acadêmico</span>
+            <h2 class="section-title">Formação</h2>
+          </div>
+        </div>
+
+        <div class="edu-grid">
+          <div>
+            <!-- Graduação -->
+            <div class="edu-card">
+              <h3><i class="ph ph-student" aria-hidden="true"></i> Graduação</h3>
+              <p class="edu-main-title">Bacharelado em Ciência da Computação</p>
+              <p class="edu-sub">UFMT – Universidade Federal de Mato Grosso (4º Semestre)</p>
+              <span class="edu-date">Previsão de conclusão: 07/2029</span>
+            </div>
+
+            <!-- Publicações e Prêmios -->
+            <div class="edu-card">
+              <h3><i class="ph ph-trophy" aria-hidden="true"></i> Publicações e Prêmios</h3>
+              <ul class="clean-list">
+                <li>
+                  <i class="ph ph-article" aria-hidden="true"></i>
+                  <span><strong>Artigo Publicado — SBGames 2026 (Trilha Artes &amp; Design):</strong> <em>"Design Participativo com Crianças Surdas: Adaptação Digital de suas Ideias e Produções Visuais para um Jogo Educativo"</em>.</span>
+                </li>
+                <li>
+                  <i class="ph ph-medal" aria-hidden="true"></i>
+                  <span><strong>1º Lugar — Hackathon Web3 (Nexus IC 2025):</strong> Desenvolvimento do protótipo funcional <em>StellarPay</em>.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <!-- Cursos -->
+            <div class="edu-card">
+              <h3><i class="ph ph-certificate" aria-hidden="true"></i> Cursos Complementares</h3>
+              <ul class="clean-list">
+                <li><i class="ph ph-check-square" aria-hidden="true"></i><span>Modelagem 3D Introdutória (Blender)</span></li>
+                <li><i class="ph ph-check-square" aria-hidden="true"></i><span>Programação em Python</span></li>
+                <li><i class="ph ph-check-square" aria-hidden="true"></i><span>Desenvolvimento Web (HTML e CSS)</span></li>
+                <li><i class="ph ph-check-square" aria-hidden="true"></i><span>Programação em Swift</span></li>
+                <li><i class="ph ph-check-square" aria-hidden="true"></i><span>Animação 2D</span></li>
+              </ul>
+            </div>
+
+            <!-- Idiomas -->
+            <div class="edu-card">
+              <h3><i class="ph ph-translate" aria-hidden="true"></i> Idiomas</h3>
+              <div class="lang-grid">
+                <div class="lang-item">
+                  <strong>Português</strong>
+                  <span>Nativo</span>
+                </div>
+                <div class="lang-item">
+                  <strong>Inglês</strong>
+                  <span>Avançado</span>
+                </div>
+                <div class="lang-item">
+                  <strong>Espanhol</strong>
+                  <span>Básico</span>
+                </div>
+                <div class="lang-item">
+                  <strong>Japonês</strong>
+                  <span>Básico</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTATO ================= -->
+    <section id="contato" class="reveal">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-tag"><i class="ph ph-paper-plane-tilt" aria-hidden="true"></i> 06 // Conexão</span>
+            <h2 class="section-title">Contato</h2>
+          </div>
+        </div>
+
+        <div class="contact-box">
+          <div>
+            <h3>Vamos conversar sobre estágio e projetos</h3>
+            <p>
+              Estou disponível para oportunidades de estágio em Dados, Inteligência Artificial, Desenvolvimento de Software, Jogos, Simulação e Modelagem Computacional e Machine Learning.
+            </p>
+            <a href="mailto:lia.aisha.pedroso@gmail.com" class="btn-primary">
+              <i class="ph ph-envelope-simple" aria-hidden="true"></i>
+              lia.aisha.pedroso@gmail.com
+            </a>
+          </div>
+
+          <div class="contact-links">
+            <a href="mailto:lia.aisha.pedroso@gmail.com" class="contact-card-link">
+              <span><i class="ph ph-envelope" aria-hidden="true"></i> E-mail profissional</span>
+              <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/lia-aisha" target="_blank" rel="noopener noreferrer" class="contact-card-link">
+              <span><i class="ph ph-linkedin-logo" aria-hidden="true"></i> linkedin.com/in/lia-aisha</span>
+              <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+            </a>
+            <a href="https://github.com/liaaisha" target="_blank" rel="noopener noreferrer" class="contact-card-link">
+              <span><i class="ph ph-github-logo" aria-hidden="true"></i> github.com/liaaisha</span>
+              <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= RODAPÉ ================= -->
+  <footer>
+    <div class="container footer-inner">
+      <span>Lia Aisha Pedroso Mesquita &copy; <span id="currentYear"></span></span>
+      <span>Cuiabá, Mato Grosso • Ciência da Computação (UFMT)</span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      // 1. Renderiza foto da variável global `foto` ou fallback com iniciais
+      const photoFrame = document.getElementById("photoFrame");
+      function renderFallbackInitials() {
+        if (!photoFrame) return;
+        photoFrame.innerHTML = '<div class="photo-initials" role="img" aria-label="Iniciais de Lia Aisha Pedroso Mesquita">LA</div>';
+      }
+
+      if (photoFrame) {
+        if (typeof foto === "string" && foto.trim() !== "") {
+          const img = document.createElement("img");
+          img.src = foto.trim();
+          img.alt = "Foto de Lia Aisha Pedroso Mesquita";
+          img.onerror = renderFallbackInitials;
+          photoFrame.appendChild(img);
+        } else {
+          renderFallbackInitials();
+        }
+      }
+
+      // 2. Saudação multilíngue animada (PT, EN, ES, JP, IT, KO, ZH, FR) no formato da referência
+      const greetings = [
+        { word: "olá,", lang: "PT" },
+        { word: "hello,", lang: "EN" },
+        { word: "hola,", lang: "ES" },
+        { word: "こんにちは、", lang: "JP" },
+        { word: "ciao,", lang: "IT" },
+        { word: "안녕하세요,", lang: "KO" },
+        { word: "你好，", lang: "ZH" },
+        { word: "bonjour,", lang: "FR" }
+      ];
+      const greetingWordEl = document.getElementById("greetingWord");
+      const greetingLangEl = document.getElementById("greetingLang");
+      let greetingIdx = 0;
+
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (greetingWordEl && greetingLangEl && !prefersReducedMotion) {
+        setInterval(() => {
+          greetingWordEl.style.opacity = "0";
+          greetingWordEl.style.transform = "translateY(-4px)";
+          setTimeout(() => {
+            greetingIdx = (greetingIdx + 1) % greetings.length;
+            greetingWordEl.textContent = greetings[greetingIdx].word;
+            greetingLangEl.textContent = greetings[greetingIdx].lang;
+            greetingWordEl.style.opacity = "1";
+            greetingWordEl.style.transform = "translateY(0)";
+          }, 220);
+        }, 2800);
+      }
+
+      // 3. Alternância de tema claro/escuro
+      const themeToggle = document.getElementById("themeToggle");
+      const themeIcon = document.getElementById("themeIcon");
+      const themeText = document.getElementById("themeText");
+      const rootEl = document.documentElement;
+
+      function applyTheme(theme) {
+        rootEl.setAttribute("data-theme", theme);
+        if (theme === "dark") {
+          themeIcon.className = "ph ph-sun";
+          themeText.textContent = "Claro";
+        } else {
+          themeIcon.className = "ph ph-moon";
+          themeText.textContent = "Escuro";
+        }
+      }
+
+      const savedTheme = localStorage.getItem("portfolio-theme");
+      if (savedTheme === "dark" || savedTheme === "light") {
+        applyTheme(savedTheme);
+      }
+
+      if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+          const current = rootEl.getAttribute("data-theme");
+          const next = current === "dark" ? "light" : "dark";
+          applyTheme(next);
+          localStorage.setItem("portfolio-theme", next);
+        });
+      }
+
+      // 4. Menu mobile
+      const menuToggle = document.getElementById("menuToggle");
+      const navLinks = document.getElementById("navLinks");
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener("click", () => {
+          const isOpen = navLinks.classList.toggle("open");
+          menuToggle.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        navLinks.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            navLinks.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+          });
+        });
+      }
+
+      // 5. Animação de entrada suave ao rolar (IntersectionObserver)
+      const reveals = document.querySelectorAll(".reveal");
+      if ("IntersectionObserver" in window && !prefersReducedMotion) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+        reveals.forEach((el) => observer.observe(el));
+      } else {
+        reveals.forEach((el) => el.classList.add("visible"));
+      }
+
+      // 6. Ano atual no rodapé
+      const yearEl = document.getElementById("currentYear");
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+    })();
+  </script>
+</body>
+</html>
